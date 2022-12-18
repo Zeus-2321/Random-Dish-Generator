@@ -42,11 +42,18 @@ async function searchMeals(event) {
   );
   const data = await response.json();
 
+  // window.scrollTo(0, 400, );
+
+  window.scrollTo({
+    top: 600,
+    behavior: 'smooth',
+  });
+
   // Check if the API returned any results
   if (data.meals === null) {
     // Display an error message if no results were found
-    const errorMessage = document.getElementById('modal');
-    errorMessage.style.display = 'block';
+    const errorMessage = document.getElementById('error');
+    errorMessage.innerHTML = 'No Search Result Found  :(';
     console.log('Error');
   } else {
     // Display the results on the page
@@ -61,7 +68,3 @@ async function searchMeals(event) {
     });
   }
 }
-
-document.getElementById('close').onclick = function () {
-  modal.style.display = 'none';
-};

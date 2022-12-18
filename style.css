@@ -68,8 +68,8 @@ button:hover {
   justify-self: center;
   display: flex;
   flex-direction: column;
-  width: 40vw;
-  height: 25vh;
+  width: 30vw;
+  height: 20vh;
   margin: auto;
 }
 
@@ -84,34 +84,15 @@ img {
   border-radius: 4%;
 }
 
-#modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  top: 0;
-  right: 20vw;
+.error {
+  margin-right: 4px;
+  padding: 12px;
 }
 
-#modal > img {
-  width: 50vw;
-  height: 35vh;
-  margin: auto;
-}
-
-/* The Close Button */
-#close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 56px;
-  font-weight: bold;
-}
-
-#close:hover,
-#close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+#error {
+  font-size: 24px;
+  font-weight: 700;
+  color: red;
 }
 
 #searchResults {

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Dish Generator</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <h1>Random Dish Generator</h1>
+      <p>
+        "Random Dish Generator" is a website that helps you discover new and
+        exciting dishes from around the world. Simply reload the page to get a
+        randomly generated dish, or use the search function to find dishes based
+        on specific ingredients. Whether you're looking for inspiration for your
+        next meal or just want to try something new, Random Dish Generator has
+        you covered. With a wide variety of dishes to choose from, you're sure
+        to find something that suits your taste. Give it a try today and expand
+        your culinary horizons!
+      </p>
+      <div id="searchBar">
+        <input id="input" type="text" placeholder="Search..." />
+        <button id="search">
+          <span class="material-symbols-outlined"> search</span>
+        </button>
+      </div>
+    </div>
+    <div class="card">
+      <img id="meal-image" />
+      <h1 id="meal-name"></h1>
+    </div>
+    <div id="modal">
+      <span id="close">&times;</span>
+      <img
+        src="https://media-exp1.licdn.com/dms/image/C5612AQEPYce5KpNLyg/article-cover_image-shrink_720_1280/0/1551659700811?e=2147483647&v=beta&t=O9mBMiF-V12jCRJwaBNDWLKNL8cku2QSoCXtKP3vCHg"
+      />
+    </div>
+    <div id="searchResults">
+      <ul id="results-list"></ul>
+    </div>
+  </body>
+</html>

@@ -34,7 +34,6 @@ async function searchMeals(event) {
 
   // Get the search query from the form
   const query = document.getElementById('input').value;
-  console.log(query);
 
   // Make the API request
   const response = await fetch(
@@ -42,29 +41,40 @@ async function searchMeals(event) {
   );
   const data = await response.json();
 
-  // window.scrollTo(0, 400, );
-
-  window.scrollTo({
-    top: 600,
-    behavior: 'smooth',
-  });
-
   // Check if the API returned any results
+
   if (data.meals === null) {
     // Display an error message if no results were found
+
     const errorMessage = document.getElementById('error');
     errorMessage.innerHTML = 'No Search Result Found  :(';
-    console.log('Error');
   } else {
+    // For clearing the previously fetched results
+
+    const errorMessage = document.getElementById('error');
+    errorMessage.innerHTML = '';
+    const searchResults = document.getElementById('searchResults');
+    searchResults.innerHTML = '';
+
     // Display the results on the page
+
     const results = data.meals;
+    var name = '';
     results.forEach((meal) => {
-      // Create a new list item for each meal
-      const li = document.createElement('li');
-      li.textContent = meal.strMeal;
-      // Append the list item to the results list
-      const resultsList = document.getElementById('results-list');
-      resultsList.appendChild(li);
+      if (meal.strMeal.length >= 35) {
+        name = 'Click to Open';
+      } else {
+        name = meal.strMeal;
+      }
+      const div = document.createElement('div');
+      div.setAttribute('class', 'searchResult');
+      div.innerHTML +=
+        `<img src="` + meal.strMealThumb + `"><h5>` + name + '</h5>';
+      searchResults.appendChild(div);
+    });
+    window.scrollTo({
+      top: 700,
+      behavior: 'smooth',
     });
   }
 }

@@ -97,6 +97,7 @@ async function searchMeals(event) {
 
       // Add an event listener to the image that displays the ingredients when clicked
       div.querySelector('img').addEventListener('click', () => {
+        div.style.zIndex = '-2';
         showIngredients(meal.strMeal);
       });
     });

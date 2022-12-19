@@ -1,5 +1,7 @@
 // For getting a random meal when page reloads
 
+let ingredients = [];
+
 fetch('https://www.themealdb.com/api/json/v1/1/random.php')
   .then((response) => response.json())
   .then((data) => {
@@ -7,20 +9,29 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
     const name = data['meals'][0]['strMeal'];
     const imageUrl = data['meals'][0]['strMealThumb'];
 
-    let ingredients = [];
+    // For getting the ingredients of the random dish
     for (let i = 1; i <= 20; i++) {
       if (data['meals'][0][`strIngredient${i}`]) {
         ingredients.push(data['meals'][0][`strIngredient${i}`]);
       }
     }
-    console.log(ingredients);
 
     // Insert the data into the relevant elements on the page
     document.getElementById('meal-name').innerHTML = name;
     document.getElementById('meal-image').src = imageUrl;
   });
-
 // For displaying the ingredients
+
+const card = document.querySelector('.card');
+card.addEventListener('click', popup);
+
+function popup() {
+  const div = document.createElement('div');
+  // div.setAttribute('class', 'searchResult');
+  div.innerHTML += `<img src="` + meal.strMealThumb + `"><h5>` + +'</h5>';
+  searchResults.appendChild(div);
+  ingredients.forEach((ingredient) => {});
+}
 
 // Search Functionality
 
@@ -60,6 +71,8 @@ async function searchMeals(event) {
 
     const results = data.meals;
     var name = '';
+    const hr = document.createElement('hr');
+    searchResults.appendChild(hr);
     results.forEach((meal) => {
       if (meal.strMeal.length >= 35) {
         name = 'Click to Open';
@@ -72,6 +85,8 @@ async function searchMeals(event) {
         `<img src="` + meal.strMealThumb + `"><h5>` + name + '</h5>';
       searchResults.appendChild(div);
     });
+
+    // For scolling to the search section
     window.scrollTo({
       top: 700,
       behavior: 'smooth',

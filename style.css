@@ -183,11 +183,8 @@ hr {
   object-fit: cover;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 550px) {
   hr {
     height: 0.4vh;
-  }
-  .searchResult:hover {
-    transform: none;
   }
 }

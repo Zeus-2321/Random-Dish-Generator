@@ -6,6 +6,9 @@
   font-family: 'Inconsolata', monospace;
   transition: all 0.25s ease-in-out;
 }
+body {
+  background-color: #ffffff;
+}
 
 #container {
   display: flex;

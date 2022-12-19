@@ -171,7 +171,6 @@ hr {
 .searchResult:hover {
   transform: scale(1.05);
   cursor: pointer;
-  z-index: 1;
 }
 
 .searchResult > img {

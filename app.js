@@ -97,7 +97,7 @@ async function searchMeals(event) {
 
       // Add an event listener to the image that displays the ingredients when clicked
       div.querySelector('img').addEventListener('click', () => {
-        div.style.zIndex = '-2';
+        div.style.zIndex = '-10';
         showIngredients(meal.strMeal);
       });
     });
@@ -134,6 +134,10 @@ async function showIngredients(mealName) {
   modal.addEventListener('click', (event) => {
     if (event.target === modal) {
       modal.style.display = 'none';
+      const searchResultDivs = document.querySelectorAll('.searchResult');
+      searchResultDivs.forEach((div) => {
+        div.style.zIndex = 'initial';
+      });
     }
   });
 }

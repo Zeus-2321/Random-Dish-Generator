@@ -22,7 +22,6 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
   });
 // For displaying the ingredients
 
-// const card = document.querySelector('.card');
 const modal = document.getElementById('modal');
 const modalContent = document.getElementById('modal-content');
 document.getElementById('meal-image').addEventListener('click', () => {
@@ -95,6 +94,11 @@ async function searchMeals(event) {
       div.innerHTML +=
         `<img src="` + meal.strMealThumb + `"><h5>` + name + '</h5>';
       searchResults.appendChild(div);
+
+      // Add an event listener to the image that displays the ingredients when clicked
+      div.querySelector('img').addEventListener('click', () => {
+        showIngredients(meal.strMeal);
+      });
     });
 
     // For scolling to the search section
@@ -103,4 +107,32 @@ async function searchMeals(event) {
       behavior: 'smooth',
     });
   }
+}
+
+// Define the showIngredients function
+async function showIngredients(mealName) {
+  // Make the API request to get the details of the specific meal
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
+  );
+  const data = await response.json();
+
+  // Display the ingredients of the meal in a list
+  modal.style.display = 'block';
+  modalContent.innerHTML = '';
+
+  modalContent.innerHTML += `<h2>Ingredients</h2><ul class="ingredients-list">`;
+  for (let i = 1; i <= 20; i++) {
+    if (data['meals'][0][`strIngredient${i}`]) {
+      modalContent.innerHTML += `<li>${
+        data['meals'][0][`strIngredient${i}`]
+      }</li>`;
+    }
+  }
+  modalContent.innerHTML += `</ul>`;
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
 }

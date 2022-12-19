@@ -6,6 +6,7 @@
   font-family: 'Inconsolata', monospace;
   transition: all 0.25s ease-in-out;
 }
+
 #container {
   display: flex;
   flex-direction: column;

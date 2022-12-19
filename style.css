@@ -91,7 +91,7 @@ button:hover {
 
 hr {
   width: 80%;
-  height: 1vh;
+  height: 0.5vh;
   background-image: linear-gradient(to right, rgb(6, 41, 65), rgb(7, 146, 189));
   border-radius: 4%;
   border: none;

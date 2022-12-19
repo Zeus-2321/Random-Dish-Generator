@@ -23,15 +23,23 @@ fetch('https://www.themealdb.com/api/json/v1/1/random.php')
 // For displaying the ingredients
 
 const card = document.querySelector('.card');
-card.addEventListener('click', popup);
+card.addEventListener('click', () => {
+  // Display the ingredients of the random meal in a list
+  card.innerHTML += `<div id = "modal"><ul class="ingredients-list">`;
+  ingredients.forEach((ingredient) => {
+    card.innerHTML += `<li>${ingredient}</li>`;
+  });
+  card.innerHTML += `</ul></div>`;
+});
+// card.addEventListener('click', popup);
 
-function popup() {
-  const div = document.createElement('div');
-  // div.setAttribute('class', 'searchResult');
-  div.innerHTML += `<img src="` + meal.strMealThumb + `"><h5>` + +'</h5>';
-  searchResults.appendChild(div);
-  ingredients.forEach((ingredient) => {});
-}
+// function popup() {
+//   const div = document.createElement('div');
+//   // div.setAttribute('class', 'searchResult');
+//   div.innerHTML += `<img src="` + meal.strMealThumb + `"><h5>` + +'</h5>';
+//   searchResults.appendChild(div);
+//   ingredients.forEach((ingredient) => {});
+// }
 
 // Search Functionality
 

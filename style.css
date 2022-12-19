@@ -96,15 +96,39 @@ button:hover {
   object-fit: cover;
 }
 
+/* The modal container */
 #modal {
-  background-color: aquamarine;
-  color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  color: black;
 }
 
-.ingredients-list {
-  background-color: aquamarine;
+/* The modal content */
+#modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1%;
+  width: 80%;
+  max-width: 500px;
+  box-sizing: border-box;
+  border-radius: 2%;
 }
 
+#modal-content > h2 {
+  width: max-content;
+  margin: auto;
+}
+li {
+  padding: 2px;
+}
 hr {
   width: 80%;
   height: 0.7vh;

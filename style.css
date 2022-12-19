@@ -21,6 +21,11 @@
   padding: 5px;
 }
 
+h2 {
+  padding: 2%;
+  color: rgb(0, 17, 22);
+}
+
 #container > h1 {
   margin: 8px;
   padding: 4px;

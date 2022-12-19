@@ -57,6 +57,8 @@ async function searchMeals(event) {
   if (data.meals === null) {
     // Display an error message if no results were found
 
+    const searchResults = document.getElementById('searchResults');
+    searchResults.innerHTML = '';
     const errorMessage = document.getElementById('error');
     errorMessage.innerHTML = 'No Search Result Found  :(';
   } else {

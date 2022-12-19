@@ -96,6 +96,15 @@ button:hover {
   object-fit: cover;
 }
 
+#modal {
+  background-color: aquamarine;
+  color: red;
+}
+
+.ingredients-list {
+  background-color: aquamarine;
+}
+
 hr {
   width: 80%;
   height: 0.7vh;

@@ -69,6 +69,10 @@ async function searchMeals(event) {
     searchResults.innerHTML = '';
     const errorMessage = document.getElementById('error');
     errorMessage.innerHTML = 'No Search Result Found  :(';
+    window.scrollTo({
+      top: 700,
+      behavior: 'smooth',
+    });
   } else {
     // For clearing the previously fetched results
 

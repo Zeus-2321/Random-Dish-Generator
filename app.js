@@ -44,7 +44,16 @@ document.getElementById('meal-image').addEventListener('click', () => {
 // Search Functionality
 
 const button = document.getElementById('search');
+const input = document.getElementById('input');
+
 button.addEventListener('click', searchMeals);
+
+input.addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    searchMeals(event);
+  }
+});
 
 // Define the searchMeals function
 async function searchMeals(event) {

@@ -193,3 +193,23 @@ hr {
     height: 0.4vh;
   }
 }
+
+.footer {
+  background-image: linear-gradient(to right, rgb(3, 29, 46), rgb(4, 50, 64));
+  color: #fff;
+  text-align: center;
+}
+
+.footer > p {
+  font-size: 12px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
+}
